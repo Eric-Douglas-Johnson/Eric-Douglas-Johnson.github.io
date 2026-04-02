@@ -1,0 +1,693 @@
+/* ============================================================
+   Eric Douglas Johnson — Portfolio
+   Google Fonts import (add this to your <head> if not already):
+   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+   ============================================================ */
+
+/* ── VARIABLES ── */
+:root {
+  --bg-deep:      #0a0d12;
+  --bg-panel:     #10151e;
+  --bg-card:      #151c28;
+  --bg-card-hov:  #1c2535;
+  --accent:       #00e5ff;
+  --accent-dim:   #007a8a;
+  --accent-glow:  rgba(0, 229, 255, 0.10);
+  --text-primary: #e8edf5;
+  --text-muted:   #6b7a91;
+  --text-dim:     #3d4e63;
+  --border:       rgba(0, 229, 255, 0.11);
+  --border-hover: rgba(0, 229, 255, 0.32);
+  --mono:         'Space Mono', 'Courier New', monospace;
+  --sans:         'DM Sans', sans-serif;
+  --nav-h:        64px;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Subtle grid texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover { color: #fff; }
+
+/* ── PRELOADER ── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.preloader-bounce {
+  display: flex;
+  gap: 8px;
+}
+
+.preloader-bounce span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: bounce 0.9s infinite ease-in-out;
+}
+.preloader-bounce span:nth-child(2) { animation-delay: 0.15s; }
+.preloader-bounce span:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%            { transform: scale(1.0); opacity: 1;   }
+}
+
+/* ── HEADER / NAV ── */
+#header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(10, 13, 18, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  z-index: 500;
+}
+
+#header .container-fluid {
+  height: 100%;
+  padding: 0 2rem;
+}
+
+#header .navbar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-height: unset;
+}
+
+/* Logo */
+#logo {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent) !important;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+#logo::before {
+  content: '> ';
+  opacity: 0.45;
+}
+
+/* Nav links */
+#navigation {
+  position: relative;
+}
+
+.navigation-row {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-menu {
+  list-style: none;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  float: none !important;
+}
+
+.navigation-menu li a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.38rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  display: block;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.navigation-menu li a:hover,
+.navigation-menu li.active a {
+  color: var(--accent);
+  border-color: var(--border-hover);
+  background: var(--accent-glow);
+}
+
+/* Mobile toggle */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-hover);
+  color: var(--accent);
+  padding: 0.35rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ── FULLPAGE WRAPPER ── */
+#video {
+  position: relative;
+  z-index: 1;
+}
+
+#fullpage {
+  position: relative;
+}
+
+/* ── SECTIONS ── */
+.section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 4rem) 0 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.section:first-child {
+  border-top: none;
+}
+
+.section-inner {
+  width: 100%;
+}
+
+/* ── SLIDE 01 — HOME ── */
+[data-section="slide01"] .about-section {
+  width: 100%;
+}
+
+[data-section="slide01"] .about-contentbox {
+  padding: 2rem 0;
+}
+
+[data-section="slide01"] h2 {
+  font-family: var(--sans);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+/* Accent the first word */
+[data-section="slide01"] h2::first-line {
+  color: var(--text-primary);
+}
+
+[data-section="slide01"] .about-contentbox > div {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* Decorative hero tag */
+[data-section="slide01"] .about-contentbox::before {
+  content: '◆  Full Stack Developer';
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+/* Blinking cursor after heading */
+[data-section="slide01"] h2::after {
+  content: '_';
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── SLIDE 02 — SKILLS ── */
+[data-section="slide02"] .title-block {
+  margin-bottom: 0.5rem;
+}
+
+[data-section="slide02"] h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+[data-section="slide02"] .title-block::before {
+  content: '// skills & experience';
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-dim);
+  margin-bottom: 0.6rem;
+}
+
+/* Override skill items to card grid */
+.skills-row .col-md-8 {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Each h6 becomes a skill card */
+.skill-item h6 {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.1rem 1.35rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.22s, background 0.22s, color 0.22s;
+  cursor: default;
+  line-height: 1.5;
+}
+
+.skill-item h6::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.22s;
+}
+
+.skill-item h6:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hov);
+  color: var(--text-primary);
+}
+
+.skill-item h6:hover::before {
+  transform: scaleY(1);
+}
+
+/* Style the  -->  separator */
+.skill-item h6 {
+  /* replace arrow with styled separator via padding trick */
+}
+
+/* ── SLIDE 03 — WORK ── */
+[data-section="slide03"] .title-block {
+  margin-bottom: 0.5rem;
+}
+
+[data-section="slide03"] h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+[data-section="slide03"] .title-block::before {
+  content: '// work examples';
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-dim);
+  margin-bottom: 0.6rem;
+}
+
+/* Owl carousel overrides for work grid */
+[data-section="slide03"] .gallery-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+[data-section="slide03"] .gallery-list .item {
+  width: 100% !important;
+  float: none !important;
+}
+
+.portfolio-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  height: 100%;
+}
+
+.portfolio-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.portfolio-item .thumb {
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.82;
+  transition: opacity 0.25s, transform 0.3s;
+  display: block;
+}
+
+.portfolio-item:hover .thumb img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.thumb-inner {
+  padding: 1.1rem 1.3rem 1.3rem;
+}
+
+.thumb-inner h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: var(--accent) !important;
+  margin-bottom: 0.5rem;
+  font-family: var(--sans);
+  letter-spacing: -0.01em;
+}
+
+.thumb-inner p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.68;
+  margin: 0;
+}
+
+/* ── SLIDE 04 — TESTIMONIALS ── */
+[data-section="slide04"] .title-block {
+  margin-bottom: 0.5rem;
+}
+
+[data-section="slide04"] h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+[data-section="slide04"] .title-block::before {
+  content: '// testimonials';
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-dim);
+  margin-bottom: 0.6rem;
+}
+
+/* Owl carousel overrides for testimonials grid */
+[data-section="slide04"] .gallery-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+[data-section="slide04"] .gallery-list .item {
+  width: 100% !important;
+  float: none !important;
+}
+
+[data-section="slide04"] .portfolio-item {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+[data-section="slide04"] .portfolio-item::before {
+  content: '"';
+  font-family: var(--mono);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--accent-dim);
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+[data-section="slide04"] .thumb {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--border-hover) !important;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+}
+
+[data-section="slide04"] .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+[data-section="slide04"] h4 {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 2px;
+}
+
+[data-section="slide04"] span {
+  font-family: var(--mono);
+  font-size: 0.66rem !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.03em;
+}
+
+[data-section="slide04"] p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* ── SLIDE 05 — CONTACT ── */
+[data-section="slide05"] .title-block {
+  margin-bottom: 0.5rem;
+}
+
+[data-section="slide05"] h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+[data-section="slide05"] .title-block::before {
+  content: '// contact';
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-dim);
+  margin-bottom: 0.6rem;
+}
+
+.contact-section {
+  margin-top: 1.75rem;
+}
+
+.contact-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  max-width: 480px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-row:hover {
+  color: var(--text-primary);
+}
+
+.contact-row .fa {
+  font-size: 0.85rem;
+  color: var(--accent-dim);
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contact-row a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+
+.contact-row a:hover .fa,
+.contact-row a:hover {
+  color: var(--accent);
+}
+
+/* ── ANIMATIONS ── */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.animate:nth-child(2) { transition-delay: 0.08s; }
+.animate:nth-child(3) { transition-delay: 0.16s; }
+.animate:nth-child(4) { transition-delay: 0.24s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav-box {
+    display: none;
+    position: absolute;
+    top: calc(var(--nav-h) - 4px);
+    right: 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-hover);
+    border-radius: 4px;
+    padding: 0.5rem;
+    min-width: 180px;
+  }
+
+  .nav-box.open {
+    display: block;
+  }
+
+  .navigation-menu {
+    flex-direction: column !important;
+    gap: 0.15rem;
+  }
+
+  .navigation-menu li a {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .section {
+    padding: calc(var(--nav-h) + 2.5rem) 0 2.5rem;
+  }
+
+  [data-section="slide01"] h2 {
+    font-size: 2rem;
+  }
+
+  .skill-item {
+    grid-template-columns: 1fr;
+  }
+
+  [data-section="slide03"] .gallery-list,
+  [data-section="slide04"] .gallery-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #header .container-fluid {
+    padding: 0 1.25rem;
+  }
+}
