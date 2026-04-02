@@ -13,251 +13,213 @@
 </head>
     
 <body>
-    
-    <div id="video">
-        <div class="preloader">
-            <div class="preloader-bounce">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  <header>
+    <a href="#home" id="logo">Eric Douglas Johnson</a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section id="home">
+    <div class="container">
+      <div class="hero-tag fade-in d1">Full Stack Software Developer</div>
+      <h1 class="fade-in d2">
+        Building solutions<br>
+        in <span>.NET</span> &amp; beyond<span class="cursor"></span>
+      </h1>
+      <p class="subtitle fade-in d3">
+        Specializing in WinForms and WPF applications — from database architecture to polished user interfaces.
+      </p>
+      <div class="cta-bar fade-in d4">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-tag">Expertise</div>
+      <h2 class="section-title">Skills &amp; Experience</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-name">Project Management &amp; Leadership</div>
+          <div class="skill-meta">5 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div>
         </div>
 
-        <header id="header">
-            <div class="container-fluid">
-                <div class="navbar">
-                    <a href="#" id="logo" title="Eric Douglas Johnson">
-                        Eric Douglas Johnson
-                    </a>
-                    <div class="navigation-row">
-                        <nav id="navigation">
-                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
-                            <div class="nav-box navbar-collapse">
-                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
-                                    <li data-menuanchor="slide01"><a href="#slide01">Home</a></li>
-                                    <li data-menuanchor="slide02"><a href="#slide02">My Skills</a></li>
-                                    <li data-menuanchor="slide03"><a href="#slide03">My Work</a></li>
-									 <li data-menuanchor="slide04"><a href="#slide04">Testimonials</a></li>
-                                    <li data-menuanchor="slide05"><a href="#slide05">Contact Me</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div id="fullpage" class="fullpage-default">
-
-            <div class="section animated-row" data-section="slide01">
-                <div class="section-inner">
-                    <div class="about-section">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 wide-col-laptop">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="about-contentbox">
-                                            <div class="animate" data-animate="fadeInUp">
-                                                <h2>Full Stack Software Developer</h2>    
-                                            </div>
-											<div>
-												Specializing in .NET WinForms and WPF solutions.<br><br>
-											</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide02">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <h2>Skills and Experience</h2>
-                            </div>
-                            <div class="skills-row animate" data-animate="fadeInDown">
-                                <div class="row">
-                                    <div class="col-md-8 offset-md-2">   
-                                        <div class="skill-item">  
-											<h6> - Project management and leadership  -->  5 years of experience </h6> <br>
-											<h6>  - Technical communication  -->  9 years of experience </h6> <br>
-											<h6>  - GUI design and implementation  -->  9 years of experience </h6> <br>
-											<h6>  - Database design and implementation  -->  9 years of experience </h6> <br>
-											<h6>  - C# and VB  -->  7 years experience </h6>  <br>
-											<h6>  - Visual Studio Environment --> 7 years experience </h6> <br><br><br>
-                                        </div>                  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide03">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <h2>Work Examples</h2>
-                            </div>
-                            <div class="gallery-section">
-                                <div class="gallery-list owl-carousel">
-								
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/pricing_main_form.png" alt="">
-                                            </div>
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4 style="color:blue">Radiator Pricing</h4>
-                                                <p>Utilizes logged operations data to build predictive labor time equations. 
-												Provides interface for management to update pricing factors. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-									
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/bom_tree.png" alt="">
-                                            </div>
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4 style="color:#B87333">Document Viewer</h4>
-                                                <p>Provides an interface for users to easily access the company file system.
-												   Has user friendly features.
-													</p>
-                                            </div>
-                                        </div>
-                                    </div>
-									
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/gage_lm.jpg" alt="">
-                                            </div>
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4 style="color:blue">Tool Calibration</h4>
-                                                <p>An app that facilitates the planning, logging, and organizing of tool calibrations. 
-												   Includes: login system, admin interface, printing due lists and calibration logs.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-															
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide04">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <h2>What They Say About Me</h2>
-                            </div>
-                            <div class="gallery-section">
-                                <div class="gallery-list owl-carousel">
-									
-                                        <div class="item animate" data-animate="fadeInUp">
-                                            <div class="portfolio-item">
-                                                <div class="thumb">
-                                                    <img src="images/steverino.jpg" width="100" height="300">
-                                                </div>
-                                                <h4 style="color:blue">Steve Sutherland</h4>
-												<span style="color:blue">Tech Lead, Ultima Bank, Bemidji, MN</span><br><br>
-                                                <p>"Eric will go above and beyond for the user of his apps. 
-													He puts a great deal of effort into features that will benefit the user."</p>
-                                                </div>                                           
-                                        </div>
-										
-										 <div class="item animate" data-animate="fadeInUp">
-                                            <div class="portfolio-item">
-                                                <div class="thumb">
-                                                    <img src="images/boborino.jpg" width="100" height="300">
-                                                </div>
-                                                <h4 style="color:blue">Bob Janezich</h4>
-												<span style="color:blue">R&D Head/Supervisor, L&M Radiator, Inc.</span><br><br>
-                                                <p>"Eric has consistently shown initiative, leadership, and excellent judgment with program
-														development here at L&M. He's capable of handling any challenge we throw his way."</p>                                                               
-                                            </div>
-                                        </div>
-										
-										<div class="item animate" data-animate="fadeInUp">
-                                            <div class="portfolio-item">
-                                                <div class="thumb">
-                                                    <img src="images/beck_2.jpg" width="100" height="300">
-                                                </div>
-                                                <h4 style="color:blue">Beckie Golnick</h4>
-												<span style="color:blue">Director of Nursing, Grand Rapids, MN</span><br><br> 
-                                                <p>"Eric truly cares about the quality of his work.
-												    He'll make a great asset to any organization."</p>                                          
-                                            </div>
-                                        </div>
-										
-                                    </div>
-                                </div>		
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section animated-row" data-section="slide05">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <h2>Get In Touch!</h2>
-                            </div>										
-							
-                            <div class="contact-section">
-                                <div class="row">
-                                    <div class="cocol-md-8 offset-md-2">
-                                        <div class="contact-box" >
-                                            <div class="contact-row">
-                                                <i class="fa fa-phone"></i> (218) 966-8885
-                                            </div>
-                                            <div class="contact-row">
-                                                <i class="fa fa-envelope"></i> e_d_johnson2003@yahoo.com
-                                            </div>
-											<div class="contact-row">
-                                                <a href="http://www.linkedin.com/in/eric-johnson-489a6479" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-							
-                        </div>
-                    </div>
-                </div>
-            </div>
-			
+        <div class="skill-card">
+          <div class="skill-name">Technical Communication</div>
+          <div class="skill-meta">9 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
         </div>
-    </div>  
 
-    <script src="js/jquery.js"></script>
+        <div class="skill-card">
+          <div class="skill-name">GUI Design &amp; Implementation</div>
+          <div class="skill-meta">9 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+        </div>
 
-    <script src="js/bootstrap.min.js"></script>
+        <div class="skill-card">
+          <div class="skill-name">Database Design &amp; Implementation</div>
+          <div class="skill-meta">9 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+        </div>
 
-    <script src="js/fullpage.min.js"></script>
+        <div class="skill-card">
+          <div class="skill-name">C# &amp; Visual Basic</div>
+          <div class="skill-meta">7 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+        </div>
 
-    <script src="js/scrolloverflow.js"></script>
+        <div class="skill-card">
+          <div class="skill-name">Visual Studio Environment</div>
+          <div class="skill-meta">7 years</div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+        </div>
 
-    <script src="js/owl.carousel.min.js"></script>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/jquery.inview.min.js"></script>
+  <!-- ── WORK ── -->
+  <section id="work">
+    <div class="container">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Work Examples</h2>
 
-    <script src="js/form.js"></script>
+      <div class="work-grid">
 
-    <script src="js/custom.js"></script>
+        <div class="work-card">
+          <div class="work-thumb">
+            <img src="images/pricing_main_form.png" alt="Radiator Pricing App"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'work-thumb-placeholder\'>[ pricing_main_form.png ]</div>'">
+          </div>
+          <div class="work-body">
+            <div class="work-title">Radiator Pricing</div>
+            <p class="work-desc">Utilizes logged operations data to build predictive labor time equations. Provides management interface for updating pricing factors.</p>
+          </div>
+        </div>
 
+        <div class="work-card">
+          <div class="work-thumb">
+            <img src="images/bom_tree.png" alt="Document Viewer"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'work-thumb-placeholder\'>[ bom_tree.png ]</div>'">
+          </div>
+          <div class="work-body">
+            <div class="work-title">Document Viewer</div>
+            <p class="work-desc">Provides an interface for users to easily access the company file system with user-friendly navigation features.</p>
+          </div>
+        </div>
 
-  </body>
+        <div class="work-card">
+          <div class="work-thumb">
+            <img src="images/gage_lm.jpg" alt="Tool Calibration App"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'work-thumb-placeholder\'>[ gage_lm.jpg ]</div>'">
+          </div>
+          <div class="work-body">
+            <div class="work-title">Tool Calibration</div>
+            <p class="work-desc">Facilitates planning, logging, and organizing of tool calibrations. Includes login system, admin interface, and printable due lists.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-tag">Social Proof</div>
+      <h2 class="section-title">What They Say</h2>
+
+      <div class="testi-grid">
+
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Eric will go above and beyond for the user of his apps. He puts a great deal of effort into features that will benefit the user.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">
+              <img src="images/steverino.jpg" alt="Steve Sutherland"
+                onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'testi-avatar-initials\'>SS</div>'">
+            </div>
+            <div>
+              <div class="testi-name">Steve Sutherland</div>
+              <div class="testi-role">Tech Lead, Ultima Bank — Bemidji, MN</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Eric has consistently shown initiative, leadership, and excellent judgment with program development here at L&M. He's capable of handling any challenge we throw his way.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">
+              <img src="images/boborino.jpg" alt="Bob Janezich"
+                onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'testi-avatar-initials\'>BJ</div>'">
+            </div>
+            <div>
+              <div class="testi-name">Bob Janezich</div>
+              <div class="testi-role">R&D Head, L&M Radiator, Inc.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Eric truly cares about the quality of his work. He'll make a great asset to any organization.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">
+              <img src="images/beck_2.jpg" alt="Beckie Golnick"
+                onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'testi-avatar-initials\'>BG</div>'">
+            </div>
+            <div>
+              <div class="testi-name">Beckie Golnick</div>
+              <div class="testi-role">Director of Nursing — Grand Rapids, MN</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-tag">Reach Out</div>
+      <h2 class="section-title">Get In Touch</h2>
+
+      <div class="contact-box">
+        <a class="contact-item" href="tel:2189668885">
+          <span class="contact-icon">Phone</span>
+          <span class="contact-val">(218) 966-8885</span>
+        </a>
+        <a class="contact-item" href="mailto:e_d_johnson2003@yahoo.com">
+          <span class="contact-icon">Email</span>
+          <span class="contact-val">e_d_johnson2003@yahoo.com</span>
+        </a>
+        <a class="contact-item" href="http://www.linkedin.com/in/eric-johnson-489a6479" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">LinkedIn</span>
+          <span class="contact-val">eric-johnson-489a6479</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Eric Douglas Johnson — Full Stack Software Developer</p>
+  </footer>
+
+</body>
 </html>
