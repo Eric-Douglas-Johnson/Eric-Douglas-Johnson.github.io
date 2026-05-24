@@ -240,6 +240,113 @@
     }
     @keyframes blink { 50% { opacity: 0; } }
 
+    /* ── AI BANNER ── */
+    .ai-banner {
+      position: relative;
+      margin-top: 2.75rem;
+      max-width: 620px;
+      border-radius: 10px;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 0 32px rgba(0,229,255,0.10);
+    }
+    /* rotating glow that forms the animated border */
+    .ai-banner::before {
+      content: '';
+      position: absolute;
+      inset: -150%;
+      z-index: -2;
+      background: conic-gradient(from 0deg,
+        transparent 0deg,
+        var(--accent) 55deg,
+        transparent 130deg,
+        transparent 235deg,
+        var(--accent-dim) 300deg,
+        transparent 360deg);
+      animation: aiSpin 6s linear infinite;
+    }
+    /* inner panel masks the glow down to a thin border */
+    .ai-banner::after {
+      content: '';
+      position: absolute;
+      inset: 1.5px;
+      z-index: -1;
+      border-radius: 9px;
+      background: var(--bg-card);
+    }
+    @keyframes aiSpin { to { transform: rotate(360deg); } }
+
+    .ai-banner-inner { padding: 1.5rem 1.75rem; }
+
+    .ai-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+    .ai-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: aiPulse 1.8s ease-out infinite;
+    }
+    @keyframes aiPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(0,229,255,0.5); }
+      70%  { box-shadow: 0 0 0 9px rgba(0,229,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
+    }
+
+    .ai-banner-title {
+      font-family: var(--sans);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 0.65rem;
+    }
+    .ai-banner-title span { color: var(--accent); }
+
+    .ai-banner-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1.1rem;
+    }
+
+    .ai-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .ai-chip {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-dim);
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+      border-radius: 3px;
+      padding: 0.32rem 0.6rem;
+      transition: all 0.2s;
+    }
+    .ai-chip:hover {
+      color: var(--accent);
+      border-color: var(--border-hover);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ai-banner::before { animation: none; }
+      .ai-pulse-dot { animation: none; }
+    }
+
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
@@ -521,6 +628,7 @@
     .d2 { animation-delay: 0.22s; }
     .d3 { animation-delay: 0.34s; }
     .d4 { animation-delay: 0.46s; }
+    .d5 { animation-delay: 0.58s; }
   </style>
 </head>
 <body>
@@ -555,6 +663,26 @@
       <div class="cta-bar fade-in d4">
         <a href="#work" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+
+      <div class="ai-banner fade-in d5">
+        <div class="ai-banner-inner">
+          <div class="ai-pulse"><span class="ai-pulse-dot"></span>AI-Augmented Workflow</div>
+          <h3 class="ai-banner-title">I build with <span>Claude &amp; AI</span> — and ship faster for it</h3>
+          <p class="ai-banner-text">
+            Twelve years of engineering fundamentals, now amplified by AI. I'm fluent in
+            &ldquo;vibe coding&rdquo; with Claude — prototyping, building, and shipping
+            production-ready apps and solutions at a pace traditional workflows can't match.
+            Embracing AI isn't a shortcut; it's how I stay competitive and deliver more in
+            today's market.
+          </p>
+          <div class="ai-chips">
+            <span class="ai-chip">Claude</span>
+            <span class="ai-chip">Vibe Coding</span>
+            <span class="ai-chip">AI-Assisted Dev</span>
+            <span class="ai-chip">Rapid Prototyping</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
