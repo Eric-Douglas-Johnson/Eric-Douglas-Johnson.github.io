@@ -470,6 +470,25 @@
       color: var(--text-muted);
       line-height: 1.65;
     }
+    .work-stack {
+      list-style: none;
+      margin: 0 0 0.85rem;
+      padding: 0;
+    }
+    .work-stack li {
+      position: relative;
+      padding-left: 0.9rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .work-stack li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
     /* ── TESTIMONIALS ── */
     .testi-grid {
@@ -762,6 +781,14 @@
           </div>
           <div class="work-body">
             <div class="work-title">Art Studio Manager</div>
+            <ul class="work-stack">
+              <li>C# / .NET 8</li>
+              <li>Blazor Server (Razor Components, QuickGrid)</li>
+              <li>HTML / CSS</li>
+              <li>Interface-decoupled persistence, JSON file store</li>
+              <li>Excel COM interop, Newtonsoft.Json</li>
+              <li>xUnit unit tests</li>
+            </ul>
             <a class="contact-item" href="https://github.com/Eric-Douglas-Johnson/ArtStudioManager.git" target="_blank" rel="noopener noreferrer">
               <span class="contact-icon">GitHub Repository</span>
             </a>
@@ -775,6 +802,15 @@
           </div>
           <div class="work-body">
             <div class="work-title">Propane Driver</div>
+            <ul class="work-stack">
+              <li>C# / .NET 8, ASP.NET Core Web API</li>
+              <li>Blazor WebAssembly client, HTML / CSS</li>
+              <li>Azure SQL + Entity Framework Core</li>
+              <li>JWT auth with role claims, BCrypt hashing</li>
+              <li>Azure Document Intelligence (OCR), Azure Communication Services</li>
+              <li>Geolocation + Web Speech APIs</li>
+              <li>Docker, xUnit integration tests</li>
+            </ul>
             <a class="contact-item" href="https://github.com/Eric-Douglas-Johnson/PropaneDriver" target="_blank" rel="noopener noreferrer">
               <span class="contact-icon">GitHub Repository</span>
             </a>
@@ -788,6 +824,15 @@
           </div>
           <div class="work-body">
             <div class="work-title">Legal Assist</div>
+            <ul class="work-stack">
+              <li>Python 3.12, FastAPI (async)</li>
+              <li>Azure Database for PostgreSQL + pgvector</li>
+              <li>asyncpg driver, HNSW vector index</li>
+              <li>Azure OpenAI embeddings + generation</li>
+              <li>RAG pipeline: chunk → embed → KNN → cited answer</li>
+              <li>Pydantic, tiktoken, pypdf</li>
+              <li>Docker, Azure Container Apps</li>
+            </ul>
             <a class="contact-item" href="#" target="_blank" rel="noopener noreferrer">
               <span class="contact-icon">GitHub Repository</span>
             </a>
